@@ -25,6 +25,13 @@ export default defineConfig({
         test: {
           name: 'integration',
           include: ['test/integration/**/*.test.ts'],
+          // One live request at a time: the suite must stay inside the site's
+          // `Crawl-delay: 10`, so the files run sequentially on a single worker.
+          fileParallelism: false,
+          maxConcurrency: 1,
+          retry: 1,
+          testTimeout: 60_000,
+          hookTimeout: 60_000,
         },
       },
     ],

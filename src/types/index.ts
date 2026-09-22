@@ -1,21 +1,24 @@
-export interface VideoSummary {
-  videoId: string;
-  title: string;
-  url: string;
-  duration: number;
-  thumb: string;
-  preview: string;
-}
+export type {
+  RequestOptions,
+  RequestResponse,
+  RetryableError,
+  SharedRequestConfig,
+  SxyprnConfig,
+  Transport,
+  TransportOptions,
+  TransportResponse,
+} from './base.js';
 
-export interface VideoDetails extends VideoSummary {
-  tags: string[];
-  uploadDate: string;
-  views: number;
-  likes: number;
-  quality: string;
-  bitrate?: number;
-  sizeMb?: number;
-  author?: string;
-}
-
-export type { VideoSummary as default };
+export type {
+  BlogOptions,
+  DetailsInput,
+  Pagination,
+  PostAuthor,
+  SearchOptions,
+  TagOptions,
+  TagSort,
+  VideoDetails,
+  VideoListOptions,
+  VideoListResult,
+  VideoSummary,
+} from './videos.js';
