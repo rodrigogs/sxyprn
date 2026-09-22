@@ -9,7 +9,8 @@
       "tsconfig.cjs.json",
       "tsconfig.json",
       "vitest.config.ts",
-      "biome.json"
+      "biome.json",
+      "!**/.worktrees"
     ]
   },
   "formatter": {
