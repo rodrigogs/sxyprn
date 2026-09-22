@@ -1,0 +1,62 @@
+{
+  "name": "sxyprn",
+  "description": "sxyprn.com api implementation.",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "types": "dist/types/index.d.ts",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigogs/sxyprn.git"
+  },
+  "keywords": [
+    "crawler",
+    "porn",
+    "spider",
+    "scraper",
+    "api",
+    "sxyprn",
+    "sexyPorn",
+    "library"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "coverage": "vitest run --project unit --coverage",
+    "test:junit": "vitest run --reporter=default --reporter=junit --outputFile=test-report.junit.xml"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "got-scraping": "^4.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
+    "@types/node": "^26.1.2",
+    "@vitest/coverage-v8": "^4.1.10",
+    "rimraf": "^6.0.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
